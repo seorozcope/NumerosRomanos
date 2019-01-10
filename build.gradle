@@ -1,0 +1,52 @@
+plugins {
+    id 'java'
+}
+
+group 'com.seorozcope.numerosRomanos'
+version '1.0'
+
+sourceCompatibility = 1.8
+
+defaultTasks 'clean','test','aggregate'
+
+repositories {
+    mavenLocal()
+    jcenter()
+}
+
+apply plugin: 'java'
+//apply plugin: 'net.serenity-bdd.aggregator'
+
+compileJava {
+    sourceCompatibility = '1.8'
+    targetCompatibility = '1.8'
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+
+    testCompile('org.assertj:assertj-core:1.7.0')
+    testCompile('org.slf4j:slf4j-simple:1.7.7')
+
+    testCompile 'net.serenity-bdd:serenity-core:1.9.9'
+    testCompile 'net.serenity-bdd:serenity-junit:1.9.9'
+    testCompile 'net.serenity-bdd:serenity-screenplay-rest:1.9.17'
+    testCompile 'net.serenity-bdd:serenity-cucumber:1.9.5'
+    testCompile 'net.serenity-bdd:serenity-screenplay:1.9.9'
+    testCompile 'net.serenity-bdd:serenity-screenplay-webdriver:1.9.9'
+
+    compile 'net.serenity-bdd:serenity-core:1.9.9'
+    compile 'net.serenity-bdd:serenity-junit:1.9.9'
+    compile 'net.serenity-bdd:serenity-screenplay-rest:1.9.17'
+    compile 'net.serenity-bdd:serenity-cucumber:1.9.5'
+    compile 'net.serenity-bdd:serenity-screenplay:1.9.9'
+    compile 'net.serenity-bdd:serenity-screenplay-webdriver:1.9.9'
+    compile group: 'com.github.noraui', name: 'ojdbc8', version: '12.2.0.1'
+    compile group: 'com.google.guava', name: 'guava', version: '16.0.1'
+
+    compile group: 'com.codoid.products', name: 'fillo', version: '1.18'
+}
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+gradle.startParameter.continueOnFailure = true
