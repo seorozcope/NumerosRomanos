@@ -141,7 +141,7 @@ public class NumeroRomanoTest {
     @Test
     public void convertirNumero95EnRomano(){
         String romano = numeroRomano.conversorRomano(95);
-        assertEquals(romano, "XVC");
+        assertEquals(romano, "XCV");
     }
 
     //pruebas de centenas
@@ -154,7 +154,7 @@ public class NumeroRomanoTest {
 
     @Test
     public void convertirNumero194EnRomano(){
-        String romano = numeroRomano.conversorRomano(100);
+        String romano = numeroRomano.conversorRomano(194);
         assertEquals(romano, "CXCIV");
     }
 
@@ -174,5 +174,11 @@ public class NumeroRomanoTest {
     public void convertirNumero400EnRomano(){
         String romano = numeroRomano.conversorRomano(400);
         assertEquals(romano, "CD");
+    }
+
+    @Test
+    public void convertirNumero999EnRomano(){
+        String romano = numeroRomano.conversorRomano(999);
+        assertEquals(romano, "CMXCIX");
     }
 }
