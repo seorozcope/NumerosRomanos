@@ -181,4 +181,9 @@ public class NumeroRomanoTest {
         String romano = numeroRomano.conversorRomano(999);
         assertEquals(romano, "CMXCIX");
     }
+    @Test
+    public void convertirNumero3999EnRomano(){
+        String romano = numeroRomano.conversorRomano(3999);
+        assertEquals(romano, "MMMCMXCIX");
+    }
 }

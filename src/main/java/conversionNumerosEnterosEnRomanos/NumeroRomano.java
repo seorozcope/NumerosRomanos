@@ -18,14 +18,14 @@ public class NumeroRomano {
         put(50, "L");
         put(100, "C");
         put(500, "D");
-        put(1000, "M");
+        put(1000, "M")
     }};
 
 
     public String conversorRomano(int numeroNatural) {
         char [] cifras =Integer.toString(numeroNatural).toCharArray();
         String romano="";
-        if(cifras.length>=4){
+         if(cifras.length>=4){
             romano =contruirBase(Character.getNumericValue(cifras[0]), 1000,0,0) +
                     contruirBase(Character.getNumericValue(cifras[1]), 100,500,1000) +
                     contruirBase(Character.getNumericValue(cifras[2]), 10,50,100) +
